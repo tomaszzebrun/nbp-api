@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kalkulator walut</title>
+        {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <h1>
+                Witaj na stronie przelicznika walut
+            </h1>
+        </header>
+        <section>
+            <h2>
+                Przelicz walutę
+            </h2>
+            <form action="" method="POST">
+                <label for="quantity">Jednostek:</label>
+                <input name="quantity" type="number" min="0.00" max="10000.00" step="0.01">
+                <br>
+                <label for="currency_rate">Wybierz walute:</label>
+                <select name="currency_rate">
+                    {% for item in rates %}
+                     <option value="{{item.ask}}">{{item.code}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Przelicz"/>
+            </form>
+        </section>
+        <section>
+            <p>Tabela: {{table}}</p>
+            <p>Koszt: {{price}}</p>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>

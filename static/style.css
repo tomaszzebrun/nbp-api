@@ -1,0 +1,14 @@
+body {
+    margin: 20px;
+}
+
+section {
+    display: block;
+    margin-left: 100px;
+    padding: 30px;
+}
+
+h1 {
+    background-color: honeydew;
+    text-align: center;
+}
